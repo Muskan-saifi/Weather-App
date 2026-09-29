@@ -1,0 +1,150 @@
+.forecast-section {
+  margin-top: 35px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 17px;
+}
+
+.small-title {
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  margin-bottom: 5px;
+}
+
+.section-heading h2 {
+  font-size: 27px;
+}
+
+.forecast-label {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 13px;
+}
+
+.forecast-grid {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 10px;
+}
+
+.forecast-card {
+  min-width: 0;
+
+  padding: 18px 12px;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(15px);
+
+  transition: 0.3s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-6px);
+
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.today-card {
+  background: rgba(255, 255, 255, 0.11);
+
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.forecast-day {
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.forecast-icon {
+  font-size: 42px;
+
+  margin: 20px 0 10px;
+
+  animation: miniFloat 3s ease-in-out infinite;
+}
+
+.forecast-condition {
+  min-height: 32px;
+
+  font-size: 10px;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.forecast-temp {
+  display: flex;
+
+  justify-content: center;
+  align-items: baseline;
+
+  gap: 7px;
+
+  margin-top: 14px;
+}
+
+.forecast-temp strong {
+  font-size: 18px;
+}
+
+.forecast-temp span {
+  font-size: 13px;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.rain-probability {
+  margin-top: 13px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  font-size: 10px;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+@keyframes miniFloat {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 900px) {
+  .forecast-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-heading h2 {
+    font-size: 22px;
+  }
+
+  .forecast-label {
+    display: none;
+  }
+}

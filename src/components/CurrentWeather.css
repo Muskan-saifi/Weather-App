@@ -1,0 +1,193 @@
+.current-card {
+  min-height: 330px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 45px;
+
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.075);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(25px);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    inset 0 1px rgba(255, 255, 255, 0.08);
+
+  animation: cardAppear 0.6s ease;
+}
+
+.current-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  right: -130px;
+  top: -150px;
+}
+
+.current-left {
+  position: relative;
+  z-index: 2;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.location > span {
+  font-size: 24px;
+}
+
+.location h2 {
+  font-size: 25px;
+}
+
+.location p {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.date {
+  margin-top: 20px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 14px;
+}
+
+.temperature {
+  display: flex;
+  align-items: flex-start;
+
+  margin-top: 15px;
+
+  font-size: clamp(75px, 10vw, 115px);
+
+  font-weight: 800;
+
+  line-height: 0.95;
+
+  letter-spacing: -6px;
+}
+
+.temperature sup {
+  font-size: 35px;
+  margin-top: 8px;
+  letter-spacing: 0;
+}
+
+.current-left h3 {
+  margin-top: 17px;
+
+  font-size: 22px;
+}
+
+.feels {
+  margin-top: 6px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 14px;
+}
+
+.current-right {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-right: 35px;
+}
+
+.weather-icon-large {
+  font-size: 130px;
+
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.25));
+
+  animation: weatherFloat 3s ease-in-out infinite;
+}
+
+.day-status {
+  padding: 9px 15px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  font-size: 13px;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes weatherFloat {
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .current-card {
+    padding: 30px 25px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .current-right {
+    position: absolute;
+
+    right: 15px;
+    top: 25px;
+
+    margin: 0;
+  }
+
+  .weather-icon-large {
+    font-size: 75px;
+  }
+
+  .day-status {
+    display: none;
+  }
+
+  .temperature {
+    font-size: 75px;
+  }
+}

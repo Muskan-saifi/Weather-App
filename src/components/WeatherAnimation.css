@@ -1,0 +1,495 @@
+.weather-animation {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  opacity: 0.75;
+}
+
+/* =========================
+   CLEAR WEATHER
+========================= */
+
+.sun {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  top: 70px;
+  right: 9%;
+
+  background: radial-gradient(
+    circle,
+    #fff7ae 0%,
+    #fbbf24 45%,
+    rgba(251, 191, 36, 0.1) 70%,
+    transparent 72%
+  );
+
+  filter: blur(1px);
+
+  animation: sunPulse 4s ease-in-out infinite;
+}
+
+.sun-rays {
+  position: absolute;
+
+  top: 70px;
+  right: 9%;
+
+  width: 180px;
+  height: 180px;
+
+  animation: rotateSun 20s linear infinite;
+}
+
+.sun-rays span {
+  position: absolute;
+
+  width: 4px;
+  height: 35px;
+
+  background: rgba(251, 191, 36, 0.35);
+
+  border-radius: 50px;
+
+  left: 88px;
+  top: -25px;
+
+  transform-origin: 2px 115px;
+}
+
+.sun-rays span:nth-child(2) {
+  transform: rotate(30deg);
+}
+
+.sun-rays span:nth-child(3) {
+  transform: rotate(60deg);
+}
+
+.sun-rays span:nth-child(4) {
+  transform: rotate(90deg);
+}
+
+.sun-rays span:nth-child(5) {
+  transform: rotate(120deg);
+}
+
+.sun-rays span:nth-child(6) {
+  transform: rotate(150deg);
+}
+
+.sun-rays span:nth-child(7) {
+  transform: rotate(180deg);
+}
+
+.sun-rays span:nth-child(8) {
+  transform: rotate(210deg);
+}
+
+.sun-rays span:nth-child(9) {
+  transform: rotate(240deg);
+}
+
+.sun-rays span:nth-child(10) {
+  transform: rotate(270deg);
+}
+
+.sun-rays span:nth-child(11) {
+  transform: rotate(300deg);
+}
+
+.sun-rays span:nth-child(12) {
+  transform: rotate(330deg);
+}
+
+.floating-cloud,
+.animated-cloud {
+  position: absolute;
+
+  width: 180px;
+  height: 55px;
+
+  border-radius: 60px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  filter: blur(1px);
+}
+
+.floating-cloud::before,
+.floating-cloud::after,
+.animated-cloud::before,
+.animated-cloud::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: inherit;
+}
+
+.floating-cloud::before,
+.animated-cloud::before {
+  width: 80px;
+  height: 80px;
+
+  left: 25px;
+  bottom: 15px;
+}
+
+.floating-cloud::after,
+.animated-cloud::after {
+  width: 65px;
+  height: 65px;
+
+  right: 25px;
+  bottom: 15px;
+}
+
+.clear-animation .cloud-one {
+  top: 24%;
+  left: -220px;
+
+  animation: cloudMove 35s linear infinite;
+}
+
+.clear-animation .cloud-two {
+  top: 70%;
+  right: -220px;
+
+  opacity: 0.5;
+
+  animation: cloudMoveReverse 45s linear infinite;
+}
+
+/* =========================
+   CLOUDS
+========================= */
+
+.clouds-animation .cloud-one {
+  top: 15%;
+  left: -250px;
+
+  animation: cloudMove 30s linear infinite;
+}
+
+.clouds-animation .cloud-two {
+  top: 40%;
+  left: -300px;
+
+  opacity: 0.6;
+
+  transform: scale(1.3);
+
+  animation: cloudMove 40s linear infinite;
+}
+
+.clouds-animation .cloud-three {
+  top: 70%;
+  right: -250px;
+
+  opacity: 0.35;
+
+  transform: scale(0.8);
+
+  animation: cloudMoveReverse 35s linear infinite;
+}
+
+/* =========================
+   RAIN
+========================= */
+
+.rain-animation .cloud-one {
+  top: 8%;
+  left: 10%;
+
+  transform: scale(1.7);
+
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.rain-animation .cloud-two {
+  top: 18%;
+  right: 5%;
+
+  transform: scale(1.2);
+
+  background: rgba(148, 163, 184, 0.09);
+}
+
+.rain-drops {
+  position: absolute;
+
+  inset: 0;
+}
+
+.rain-drops span {
+  position: absolute;
+
+  top: -30px;
+
+  width: 1px;
+  height: 35px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(147, 197, 253, 0.7)
+  );
+
+  animation: rainFall linear infinite;
+}
+
+.rain-drops span:nth-child(3n) {
+  left: 10%;
+}
+
+.rain-drops span:nth-child(3n + 1) {
+  left: 45%;
+}
+
+.rain-drops span:nth-child(3n + 2) {
+  left: 80%;
+}
+
+.rain-drops span:nth-child(5n) {
+  animation-duration: 0.7s;
+}
+
+.rain-drops span:nth-child(5n + 1) {
+  animation-duration: 1s;
+}
+
+.rain-drops span:nth-child(5n + 2) {
+  animation-duration: 1.3s;
+}
+
+.rain-drops span:nth-child(5n + 3) {
+  animation-duration: 0.85s;
+}
+
+.rain-drops span:nth-child(5n + 4) {
+  animation-duration: 1.15s;
+}
+
+/* =========================
+   SNOW
+========================= */
+
+.snow-animation .cloud-one {
+  top: 10%;
+  left: 5%;
+
+  transform: scale(1.5);
+}
+
+.snow-animation .cloud-two {
+  top: 20%;
+  right: 0;
+
+  transform: scale(1.2);
+}
+
+.snowflakes span {
+  position: absolute;
+
+  top: -30px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+
+  animation: snowFall linear infinite;
+}
+
+.snowflakes span:nth-child(3n) {
+  left: 15%;
+}
+
+.snowflakes span:nth-child(3n + 1) {
+  left: 50%;
+}
+
+.snowflakes span:nth-child(3n + 2) {
+  left: 85%;
+}
+
+.snowflakes span:nth-child(4n) {
+  animation-duration: 6s;
+}
+
+.snowflakes span:nth-child(4n + 1) {
+  animation-duration: 8s;
+}
+
+.snowflakes span:nth-child(4n + 2) {
+  animation-duration: 10s;
+}
+
+.snowflakes span:nth-child(4n + 3) {
+  animation-duration: 7s;
+}
+
+/* =========================
+   FOG
+========================= */
+
+.fog-line {
+  position: absolute;
+
+  left: -10%;
+  width: 120%;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  filter: blur(8px);
+}
+
+.fog-one {
+  top: 25%;
+
+  animation: fogMove 10s ease-in-out infinite;
+}
+
+.fog-two {
+  top: 48%;
+
+  opacity: 0.7;
+
+  animation: fogMoveReverse 13s ease-in-out infinite;
+}
+
+.fog-three {
+  top: 70%;
+
+  opacity: 0.5;
+
+  animation: fogMove 15s ease-in-out infinite;
+}
+
+/* =========================
+   STORM
+========================= */
+
+.lightning {
+  position: absolute;
+
+  top: 25%;
+  left: 50%;
+
+  font-size: 90px;
+
+  opacity: 0;
+
+  animation: lightningFlash 5s infinite;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes sunPulse {
+  50% {
+    transform: scale(1.08);
+    filter: blur(2px);
+  }
+}
+
+@keyframes rotateSun {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cloudMove {
+  from {
+    transform: translateX(-250px);
+  }
+
+  to {
+    transform: translateX(calc(100vw + 300px));
+  }
+}
+
+@keyframes cloudMoveReverse {
+  from {
+    transform: translateX(250px);
+  }
+
+  to {
+    transform: translateX(calc(-100vw - 300px));
+  }
+}
+
+@keyframes rainFall {
+  from {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+@keyframes snowFall {
+  from {
+    transform: translateY(-50px) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes fogMove {
+  50% {
+    transform: translateX(80px);
+  }
+}
+
+@keyframes fogMoveReverse {
+  50% {
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes lightningFlash {
+  0%,
+  92%,
+  96%,
+  100% {
+    opacity: 0;
+  }
+
+  93%,
+  95% {
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 600px) {
+  .sun {
+    width: 110px;
+    height: 110px;
+
+    right: -20px;
+    top: 100px;
+  }
+
+  .sun-rays {
+    display: none;
+  }
+}
